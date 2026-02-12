@@ -2,8 +2,8 @@
 # This PKGBUILD is for personal use and is NOT published to aur.archlinux.org
 
 pkgname=katazuke
-pkgver=0.3.0
-_commit=c334d7a
+pkgver=0.4.0
+_commit=573e7d4
 pkgrel=1
 pkgdesc="Developer workspace maintenance tool for tidying up git repositories"
 arch=('x86_64')
@@ -13,7 +13,7 @@ depends=('git')
 makedepends=('go')
 options=(!debug)
 source=("$pkgname-$pkgver.tar.gz::https://github.com/agrahamlincoln/$pkgname/archive/v$pkgver.tar.gz")
-sha256sums=('013e7e5bc411fb3f65d2b1d7c761144adf713ad8894c4f04d2c3e3cbe10c9793')
+sha256sums=('8680b9585bdbd2ab0103716981d634db68eaf73387173d41f711f5dee92459e5')
 
 build() {
     cd "$srcdir/$pkgname-$pkgver"
