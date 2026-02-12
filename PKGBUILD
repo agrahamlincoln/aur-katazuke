@@ -11,7 +11,7 @@ license=('MIT')
 depends=('git')
 makedepends=('go')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/agrahamlincoln/$pkgname/archive/v$pkgver.tar.gz")
-sha256sums=('SKIP')
+sha256sums=('7757dbf2c37e40efc6d59d61b3ee900f596cb5883e2bcc464023ba567f7f0b4a')
 
 build() {
     cd "$srcdir/$pkgname-$pkgver"
