@@ -3,6 +3,7 @@
 
 pkgname=katazuke
 pkgver=0.1.2
+_commit=0a9d326
 pkgrel=1
 pkgdesc="Developer workspace maintenance tool for tidying up git repositories"
 arch=('x86_64')
@@ -10,6 +11,7 @@ url="https://github.com/agrahamlincoln/katazuke"
 license=('MIT')
 depends=('git')
 makedepends=('go')
+options=(!debug)
 source=("$pkgname-$pkgver.tar.gz::https://github.com/agrahamlincoln/$pkgname/archive/v$pkgver.tar.gz")
 sha256sums=('326df6c500bf45aafa2f75fe16f2572b1a887ebb35247a7822291b8acc3577c9')
 
@@ -20,7 +22,7 @@ build() {
     export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
 
     go build \
-        -ldflags "-X main.version=$pkgver -X main.commit=aur -X main.date=$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+        -ldflags "-s -w -X main.version=$pkgver -X main.commit=$_commit -X main.date=$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
         -o "$pkgname" \
         ./cmd/katazuke
 }
